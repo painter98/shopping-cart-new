@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Shopping-cart:Shop</title>
+</head>
+<body>
+    <nav>
+        <div>MeShop.</div>
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <a href="../login">Login</a>
+            <a href="../signup">SignUp</a>
+            <a href="../Cart">My Cart</a>
+            <a href="../Profile">Profile</a>
+        </div>
+    </nav>
+    <main class="container-2">
+        <div class="first">
+            <hr>
+            <div class="rating">
+                <h4>Rating</h4>
+                0<input type="range" min="0" max="5" id="rate" value="0">5
+            </div>
+            <hr>
+            <div class="price">
+                <h4>Price</h4>
+                <input type="checkbox" class="filter" id="lprice">$0-$25
+                <br>
+                <input type="checkbox" class="filter" id="mprice">$25-$75
+                <br>
+                <input type="checkbox" class="filter" id="hprice">$75-$125
+                <br>
+                <input type="checkbox" class="filter" id="vhprice">>=$125
+                <br>
+            </div>
+            <br>
+            <button id="shop-btn" onclick="applyFilter()">Apply Filter</button>
+        </div>
+        <div class="second">
+            <input id="search" placeholder="Search">
+            <div class="buttons">
+                <button class="catagory" id="all">All</button>
+                <button class="catagory" id="mens">Mens</button>
+                <button class="catagory" id="womens">Womens</button>
+                <button class="catagory" id="jewels">Jewellary</button>
+                <button class="catagory" id="electronics">Electronics</button>
+            </div>
+            <div id="products"></div>
+        </div>
+    </main>
+    <script src="./script.js" type="text/javascript"></script>
+</body>
+</html>

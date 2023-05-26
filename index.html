@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div>MeShop.</div>
+        <div class="container">
+            <a href="#">Home</a>
+            <a href="./login">Login</a>
+            <a href="./signup">SignUp</a>
+            <a href="./cart" id="cart">My Cart</a>
+            <a href="./profile" id="profile">Profile</a>
+        </div>
+    </nav>
+    <main class="main-container">
+            <h1>MeShop.</h1>
+            <p>Your First Shop built on HTML,CSS AND JavaScript</p>
+            <button class="login-btn"onclick="login()">Login</button>
+            <button class="signup-btn" onclick="redirect()">SignUp</button>
+    </main>
+    <script>
+        let cart = document.getElementById('cart');
+        let profile = document.getElementById('profile');
+
+        if(localStorage.getItem('currUser')){
+            cart.style.display = "inline";
+            profile.style.display = "inline";
+        }
+        else  {
+            cart.style.display = "none";
+            profile.style.display = "none";
+        }
+        function login() {
+            window.location.href = './login';
+        }
+        function redirect(){
+            window.location.href = './signup';
+        }
+    </script>
+</body>
+</html>

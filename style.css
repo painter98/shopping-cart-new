@@ -1,0 +1,37 @@
+nav,.login-btn{
+    background-color: black;
+    color:white;
+}
+nav{
+    display:flex;
+    padding:1vw;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    padding:1vw;
+}
+
+.login-btn,.signup-btn{
+    padding:0.5vw 2vw;
+}
+
+.signup-btn{
+    background-color: white;
+}
+
+.main-container{
+    margin:3vw;
+}
+
+body{
+    background:url(undraw_web_shopping_re_owap\ 1.png);
+    background-repeat:no-repeat;
+    background-position-x: right;
+    margin:0;
+}
+#profile,#cart{
+    display: none;
+}

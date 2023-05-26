@@ -1,0 +1,39 @@
+body{
+    margin:0;
+}
+
+nav{
+    display:flex;
+    padding:1vw;
+    justify-content: space-between;
+    color:white;
+    background-color: black;
+}
+
+#homepage,#cart{
+    display:none;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    padding:1vw;
+}
+input{
+    padding:1vw;
+}
+.btn{
+    color:white;
+    background-color: black;
+    width:10vw;
+    padding:0.5vw 2vw;
+}
+#btn2{
+    width:12vw;
+}
+.container-2{
+    display: flex;
+    flex-direction: column;
+    gap:2vw;
+    padding:2vw;
+}

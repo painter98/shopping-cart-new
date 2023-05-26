@@ -1,0 +1,38 @@
+.container-2{
+    display:flex;
+    flex-direction: column;
+    padding:3vw;
+    gap:1vw;
+}
+input{
+    padding:1vw;
+}
+
+#sign-btn{
+    width:10vw;
+    padding:0.5vw 2vw;
+    background-color: black;
+    color:white;
+}
+
+#homepage,#profile{
+    display:none;
+}
+
+body{
+    margin:0;
+}
+
+nav{
+    display:flex;
+    padding:1vw;
+    justify-content: space-between;
+    color:white;
+    background-color: black;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    padding:1vw;
+}
