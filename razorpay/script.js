@@ -3,7 +3,7 @@
 
 // Add button code documentation:
 // https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/build-integration#code-to-add-pay-button
-const price=JSON.parse(localStorage.getItem("totalPrice"))
+const price=JSON.parse(sessionStorage.getItem("totalPrice"))
 document.getElementById("rzp-button1").onclick = function (e) {
 
     var options = {
@@ -21,6 +21,6 @@ document.getElementById("rzp-button1").onclick = function (e) {
   
     var rzpy1 = new Razorpay(options); //object of Razaorpay
     rzpy1.open();
-    // clear mycart - localStorage
+    // clear mycart - sessionStorage
     e.preventDefault();
   };
