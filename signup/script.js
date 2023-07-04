@@ -2,10 +2,10 @@
 let id=0;
 
 
-let users = JSON.parse(localStorage.getItem('users')) || [];
+let users = JSON.parse(sessionStorage.getItem('users')) || [];
 let curruser = {};
 let homepage = document.getElementById('homepage');
-if(localStorage.getItem('currUser')){
+if(sessionStorage.getItem('currUser')){
      homepage.style.display = "inline";
      profile.style.display = "inline";
 }
@@ -32,7 +32,7 @@ document.getElementById('sign-btn').addEventListener('click',(e)=>{
     let msg = document.getElementById('msg');
     console.log(pwd,fname,lname,mail,conpwd);
 
-    let user = users!='' ? JSON.parse(localStorage.getItem('users')).filter((user)=>{
+    let user = users!='' ? JSON.parse(sessionStorage.getItem('users')).filter((user)=>{
         return user.mail==mail;
     }):'';
 
@@ -59,8 +59,8 @@ document.getElementById('sign-btn').addEventListener('click',(e)=>{
         users.push(curruser);
         curruser.token = accessToken();
     
-        localStorage.setItem('users',JSON.stringify(users));
-        localStorage.setItem('currUser',JSON.stringify(curruser));
+        sessionStorage.setItem('users',JSON.stringify(users));
+        sessionStorage.setItem('currUser',JSON.stringify(curruser));
         msg.innerText = 'Successfully signed up, you can login now';
         id++;
     }
