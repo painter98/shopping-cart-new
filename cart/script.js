@@ -1,4 +1,4 @@
-let cartProduct = JSON.parse(localStorage.getItem('cart')) || [];
+let cartProduct = JSON.parse(sessionStorage.getItem('cart')) || [];
 
 console.log(cartProduct);
 
@@ -31,6 +31,6 @@ second.innerHTML += `<p>Total price: $${sum}</p>
 let Checkout = document.getElementById('cart-btn');
 Checkout.addEventListener('click',()=>{
     window.location.href = '../razorpay';
-    localStorage.setItem('totalPrice',JSON.stringify(sum));
+    sessionStorage.setItem('totalPrice',JSON.stringify(sum));
 })
 
