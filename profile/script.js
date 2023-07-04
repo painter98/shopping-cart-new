@@ -1,13 +1,13 @@
 
 
-let curruser = JSON.parse(localStorage.getItem('currUser'));
+let curruser = JSON.parse(sessionStorage.getItem('currUser'));
 
-let newusers = JSON.parse(localStorage.getItem('users'));
+let newusers = JSON.parse(sessionStorage.getItem('users'));
 
 console.log(newusers,curruser);
 let cart = document.getElementById('cart');
 
-if(localStorage.getItem('currUser')){
+if(sessionStorage.getItem('currUser')){
     cart.style.display = "inline";
 }
 else  {
@@ -25,7 +25,7 @@ document.getElementById('btn1').addEventListener('click',()=>{
         curruser.lname = lastname;
     
     
-        localStorage.setItem('currUser',JSON.stringify(curruser));
+        sessionStorage.setItem('currUser',JSON.stringify(curruser));
     
         newusers.forEach((user)=>{
             if(user.mail === curruser.mail){ //finding targeting object using mail id and change first and last name
@@ -33,7 +33,7 @@ document.getElementById('btn1').addEventListener('click',()=>{
                 user.lname = lastname;
             }
         })
-        localStorage.setItem('users',JSON.stringify(newusers));
+        sessionStorage.setItem('users',JSON.stringify(newusers));
     }
     else{
         alert('please enter firstname and lastname'); //empty inputs
@@ -56,8 +56,8 @@ document.getElementById('btn2').addEventListener('click',()=>{
         })
         curruser.pwd = newpassword; //change password
 
-        localStorage.setItem('currUser',JSON.stringify(curruser));
-        localStorage.setItem('users',JSON.stringify(newusers));
+        sessionStorage.setItem('currUser',JSON.stringify(curruser));
+        sessionStorage.setItem('users',JSON.stringify(newusers));
     }  
     else if(oldpassword == '' || newpassword == '' || conpassword == ''){ //empty fields 
         alert('Do not leave passwords input empty');
@@ -72,6 +72,6 @@ document.getElementById('btn2').addEventListener('click',()=>{
 });
 
 document.getElementById('btn3').addEventListener('click',()=>{ //logging out the current user
-    localStorage.removeItem('currUser'); //remove data of current user from local storage
+    sessionStorage.removeItem('currUser'); //remove data of current user from local storage
     window.location.href = '../index.html'; ///redirecting to the homepage
 })
