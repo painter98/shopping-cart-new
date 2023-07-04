@@ -17,7 +17,7 @@ cartProduct.forEach((product)=>{
         id++;
 
         //cost of items and its total
-        sum+=product.price;
+        sum += product.price;
         second.innerHTML += `<div class="product-price">
                                 <p>${product.title}</p>
                                 <p>$${product.price}</p>

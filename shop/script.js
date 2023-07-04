@@ -11,13 +11,12 @@ fetch('https://fakestoreapi.com/products').then((response)=>{ //fetch API dsta o
     data.forEach((product)=>{
         if(product.category!='jewelery'){
             product.colors = ["red","blue","black","green"]; //manually add colors and size filters to data
-            product.sizes = ["s","l","m","xl"];
+            product.sizes = ["S","L","M","XL"];
         }
         else{
-            product.colors = [];
-            product.sizes = [];
+            product.colors = ['silver','gold'];
+            product.sizes = ['S','M','L','XL'];
         }
-
         myArr.push(product);
     })
     showArray(myArr);
@@ -31,11 +30,18 @@ function showArray(array){ //showing data on the shop screen
             <img class="product-image" src="${product.image}" alt="item picture">
             <h5>${product.title}</h5>
             <p>Price: $${product.price} Rating:${product.rating.rate}</p>
-            <div> color
+            <div> Color:
                 <span class="color" style="background-color:${product.colors[0]}"></span>
                 <span class="color" style="background-color:${product.colors[1]}"></span>
                 <span class="color" style="background-color:${product.colors[2]}"></span>
                 <span class="color" style="background-color:${product.colors[3]}"></span>
+            </div>
+            <br>
+            <div> Size:
+                <span > ${product.sizes[0]}</span>
+                <span > ${product.sizes[1]}</span>
+                <span > ${product.sizes[2]}</span>
+                <span > ${product.sizes[3]}</span>
             </div>
             <button onclick="toCart(${id})" class="tocart">add to cart</button>
         </div>`
