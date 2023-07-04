@@ -1,8 +1,8 @@
 let products = document.getElementById('products');
 let myArr = [];
 let myCart = [];
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let curruser = JSON.parse(localStorage.getItem('currUser'));
+let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+let curruser = JSON.parse(sessionStorage.getItem('currUser'));
 console.log(curruser);
 
 fetch('https://fakestoreapi.com/products').then((response)=>{ //fetch API dsta of products
