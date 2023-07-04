@@ -182,5 +182,5 @@ function toCart(itemId){
     
     cart.push(cartProduct[0]);
     //cart = [];
-    localStorage.setItem('cart',JSON.stringify(cart));
+    sessionStorage.setItem('cart',JSON.stringify(cart));
 };
