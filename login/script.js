@@ -2,7 +2,7 @@
 let cart = document.getElementById('cart');
 let homepage = document.getElementById('homepage');
 
-if(localStorage.getItem('currUser')){
+if(sessionStorage.getItem('currUser')){
     cart.style.display = "inline";
     homepage.style.display = "inline";
 }
@@ -15,9 +15,9 @@ else  {
 document.getElementById('log-btn').addEventListener('click',(e)=>{
     e.preventDefault();
 
-    let currentUser = JSON.parse(localStorage.getItem('currUser'));
+    let currentUser = JSON.parse(sessionStorage.getItem('currUser'));
     
-    if(localStorage.getItem('currUser')){
+    if(sessionStorage.getItem('currUser')){
         alert("You are already logged in with Email Id "+ currentUser.mail);
         return;
     }
@@ -26,8 +26,8 @@ document.getElementById('log-btn').addEventListener('click',(e)=>{
     let pwd = document.getElementById('log-pwd').value;
 
    /* console.log(mail,pwd);
-    console.log(localStorage.getItem('users'))*/
-    let curruser = JSON.parse(localStorage.getItem('users')).filter((user)=>{ //search in users array to know current login mail exists 
+    console.log(sessionStorage.getItem('users'))*/
+    let curruser = JSON.parse(sessionStorage.getItem('users')).filter((user)=>{ //search in users array to know current login mail exists 
         return user.mail==mail;
     });
     console.log(curruser);
@@ -39,7 +39,7 @@ document.getElementById('log-btn').addEventListener('click',(e)=>{
     //console.log(curruser[0].mail,curruser[0].pwd);
     if(curruser[0].mail == mail && curruser[0].pwd == pwd) { //login the user go to shop web page
         console.log('redirecting');
-        localStorage.setItem('currUser',JSON.stringify(curruser[0])); //update current user in localstorage whenever an user logs in
+        sessionStorage.setItem('currUser',JSON.stringify(curruser[0])); //update current user in localstorage whenever an user logs in
         window.location.href = '../shop';
     }
     else if(curruser[0].mail != mail && curruser[0].pwd == pwd || curruser[0].mail == mail && curruser[0].pwd != pwd) { //wrong password or mail id
